@@ -4,18 +4,21 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-from setuptools import setup
+from setuptools import setup, find_packages
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
-
 
 setup(
     name="lightconv_layer",
+    version="0.0.1",
+    packages=find_packages("src"),
+    package_dir={"": "src"},
+    include_package_data=True,
     ext_modules=[
         CUDAExtension(
-            "lightconv_cuda",
-            [
-                "lightconv_cuda.cpp",
-                "lightconv_cuda_kernel.cu",
+            name="lightconv_cuda",
+            sources=[
+                "csrc/lightconv_cuda.cpp",
+                "csrc/lightconv_cuda_kernel.cu",
             ],
         ),
     ],

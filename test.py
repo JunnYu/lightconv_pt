@@ -1,6 +1,6 @@
 import torch
 
-from lightweight_convolution import LightweightConv, LightweightConv1d
+from lightconv_layer import LightweightConv, LightweightConv1d
 
 # T x B x C
 x = torch.randn(16, 1, 32).cuda()

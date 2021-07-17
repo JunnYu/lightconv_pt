@@ -1,10 +1,18 @@
 # lightconv_layer
 lightconv_layer fairseq
 
+# Generate cuda_function_gen
+```bash
+cd csrc
+python cuda_function_gen.py
+```
+
 # Install 
 ```bash
-cd lightconv_layer
+git clone https://github.com/JunnYu/lightconv_pt.git
 python setup.py build install
+or
+pip install git+https://github.com/JunnYu/lightconv_pt.git
 ```
 
 # Usage
