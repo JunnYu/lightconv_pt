@@ -1,15 +1,5 @@
-# lightconv_layer
-lightconv_layer fairseq
-
-# Install 
-```bash
-cd lightconv_layer
-python setup.py build install
-```
-
-# Usage
-```python
 import torch
+
 from lightweight_convolution import LightweightConv, LightweightConv1d
 
 # T x B x C
@@ -32,9 +22,6 @@ print(o1.shape, o2.shape)
 
 dif = (o1 - o2).abs().mean()
 print(dif)
+
 # torch.Size([16, 1, 32]) torch.Size([16, 1, 32])
 # tensor(0., device='cuda:0')
-```
-
-# Reference
-https://github.com/pytorch/fairseq/tree/master/fairseq/modules/lightconv_layer
